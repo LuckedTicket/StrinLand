@@ -47,7 +47,7 @@ class Inventory():
         surf.blit(textsurface, (opx, opx))
         return surf
 
-    def moveSlot(self) -> None:
+    def moveSlotByNumbers(self) -> None:
         keys=pygame.key.get_pressed()
         if keys[pygame.K_1]: self.selectId=0
         elif keys[pygame.K_2]: self.selectId=1
@@ -57,6 +57,9 @@ class Inventory():
         elif keys[pygame.K_6]: self.selectId=5
         elif keys[pygame.K_7]: self.selectId=6
         elif keys[pygame.K_8]: self.selectId=7
+
+    def moveSlot(self) -> None:
+        keys=pygame.key.get_pressed()
         if keys[pygame.K_RIGHT]:
             if self.selectId >= len(self.inventory)-1:
                 self.selectId = 0

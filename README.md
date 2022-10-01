@@ -5,11 +5,20 @@ A game where you build and do what you want, the game is still in development, i
 
 Also, this game **can be changed**, **downloaded**, **make mods** for your clients and whatever you want, **this project is not about money**, **only about chaos.**
 
-> **FUN FACT**: when the building was being developed, the player was building over **10,000 blocks per second** *(it was calculated by the algorithm)* which caused the game to *crash* and *not start again*
+> **FUN FACT**:*when **programming** the inventory, the **error** began to **fill all the grass blocks***
 
-## **0.0.1 BETA! Let's start checking**
-The first version of the game, it still has little content, but already has inventory, blocks, building, pause and more.
+## **0.0.2 BETA! Let's start checking**
+The game will be supplemented and updated constantly, a lot of ideas, if you also have ideas, you can send me an email which is indicated in my profile, or contact me through social networks
+## **Updates**
+**Already done**
+ - Inventory system
+ - save system
+ - pause mode
+ - item block in player hand
+ - has been added license for project
+ - optimization
 
+## **DOWNLOAD and checking**
 >To play the BETA version of the game you need to download [python-v3.1](https://www.python.org/) .*(there is no project build yet, because this is a beta-test)*
 
 To start the project, you need to download its master and write 2 commands in the terminal on your PC.

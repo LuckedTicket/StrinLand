@@ -1,3 +1,4 @@
+!(https://github.com/LuckedTicket/StrinLand/raw/main/view/displ1.png)
 ## **StrinLand**
 A game where you build and do what you want, the game is still in development, it will have multiplayer and a lot of interesting things, I hope you like it, there will be a project website soon, developed by the Füls team.
 

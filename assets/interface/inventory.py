@@ -15,6 +15,46 @@ class Inventory():
 
         self._circle_cache = {}
 
+        self.inventoryIDbig = 0
+        self.inv1 = pygame.image.load('./assets/data/include/interface/slot.png')
+        self.inv1 = pygame.transform.scale(self.inv1, (30, 30))
+        self.inv1.convert_alpha()
+        self.inv2 = pygame.image.load('./assets/data/include/interface/slot-active.png')
+        self.inv2 = pygame.transform.scale(self.inv2, (30, 30))
+        self.inv2.convert_alpha()
+        self.allBlocksList = ['water-block', 'sand-block', 'grass-block']
+        self.isBigInventory = False
+
+    def moveInventroyBig(self) -> None:
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_RETURN]:
+            self.isBigInventory = False
+            self.inventory[self.selectId] = self.allBlocksList[self.inventoryIDbig]
+        if keys[pygame.K_BACKSPACE]:
+            self.isBigInventory = False
+            self.inventory[self.selectId] = 'None'
+        if keys[pygame.K_RIGHT]:
+            if self.inventoryIDbig >= len(self.allBlocksList)-1:
+                self.inventoryIDbig = 0
+            else: self.inventoryIDbig += 1
+        if keys[pygame.K_LEFT]:
+            if self.inventoryIDbig <= 0:
+                self.inventoryIDbig = len(self.allBlocksList)-1
+            else: self.inventoryIDbig -= 1
+
+    def renderBigInventory(self) -> None:
+        posItem = 5+30+5+30+30+5+30+5
+        for i in range(len(self.allBlocksList)):
+            current = pygame.image.load(f'./assets/data/include/items/{self.allBlocksList[i]}.png')
+            current = pygame.transform.scale(current, (20, 20))
+            current.convert_alpha()
+            if i == self.inventoryIDbig:
+                self.win.blit(self.inv2, (posItem+5, 5+30+5))
+            else:
+                self.win.blit(self.inv1, (posItem+5, 5+30+5))
+            self.win.blit(current, (posItem+10, 5+30+5+5))
+            posItem+=35
+
     def _circlepoints(self, r):
         r = int(round(r))
         if r in self._circle_cache:
@@ -72,7 +112,7 @@ class Inventory():
     def inventoryRender(self) -> None:
         posItem = 5
         for index in range(len(self.inventory)):
-            current1 = pygame.image.load(f'./assets/data/include/{self.inventory[index]}.png').convert()
+            current1 = pygame.image.load(f'./assets/data/include/items/{self.inventory[index]}.png')
             current1 = pygame.transform.scale(current1, (20, 20))
             if index == self.selectId:
                 self.win.blit(self.slottextureac, (posItem, 5))

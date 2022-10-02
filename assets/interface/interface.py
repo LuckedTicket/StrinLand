@@ -20,18 +20,14 @@ class InterFace():
 
     def _circlepoints(self, r):
         r = int(round(r))
-        if r in self._circle_cache:
-            return self._circle_cache[r]
+        if r in self._circle_cache:return self._circle_cache[r]
         x, y, e = r, 0, 1 - r
         self._circle_cache[r] = points = []
         while x >= y:
             points.append((x, y))
             y += 1
-            if e < 0:
-                e += 2 * y - 1
-            else:
-                x -= 1
-                e += 2 * (y - x) - 1
+            if e < 0:e += 2 * y - 1
+            else:x -= 1;e += 2 * (y - x) - 1
         points += [(y, x) for x, y in points if x > y]
         points += [(-x, y) for x, y in points if x]
         points += [(x, -y) for x, y in points if y]

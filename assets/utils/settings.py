@@ -11,3 +11,5 @@ framerate = readjson(cnfStock, 'app.data', 'app.data.framerate')
 
 scale = readjson(cnfStock, 'app.engine', 'app.engine.scale')
 outline = readjson(cnfStock, 'app.engine', 'app.engine.outline')
+
+speed = readjson(cnfStock, 'app.player', 'app.player.speed')
